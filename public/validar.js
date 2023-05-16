@@ -1,7 +1,3 @@
-function login_princi(){
-    window.location.href = "../login/login_princi.html"
-}
-
 const nombre = document.getElementById("name")
 const apellido = document.getElementById("ape")
 const mail = document.getElementById("email")
@@ -13,13 +9,12 @@ const parrafo = document.getElementById("warnings")
 
 
 form.addEventListener("submit", e=>{
-
-
+add("invalid");
     e.preventDefault()
     let warnings = ""
     let entrar = false
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    let regexp_password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/ /*Email con dominio de 2 a 4 caracteres*/
+    let regexp_password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/ /*De 6 a 20 caracteres con minimo un numero y una letra mayuscula y minuscula */
     parrafo.innerHTML = ""
     if(nombre.value ===null || nombre.value === ''){
         warnings += "El nombre no es valido <br>"
