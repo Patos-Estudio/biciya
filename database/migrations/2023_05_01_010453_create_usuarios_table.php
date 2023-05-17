@@ -19,6 +19,7 @@ class CreateUsuariosTable extends Migration
             $table->string('apellido');
             $table->integer('cedula');
             $table->string('email')->unique()->email();
+            $table->string('rol')->nullable();
             $table->string('contraseña');
             $table->timestamps();
         });

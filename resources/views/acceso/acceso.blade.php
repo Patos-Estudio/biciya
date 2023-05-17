@@ -9,13 +9,16 @@
 </head>
 <body >
     <header>
-        <a href="#" class="logo">
+    @extends('layouts.app')
+ 
+        <!-- <a href="#" class="logo">
             <img src="{{ asset('imagenes/acceso/logo.jpg') }}" alt="logo de la compañia" class="logo-img">
             <h2 class="nombre-empresa">Biciya</h2>
         </a>
         <a href="#" class="inicio" onclick="home()">
             <img src="{{ asset('imagenes/acceso/casita.png') }}" alt="casita para ir al inicio" class="inicio-img">
-        </a>
+        </a> -->
+        
     </header>
 <section class="contenedor-historial" id="contenedor-historial">   
     <div class="content" id="nivel">
