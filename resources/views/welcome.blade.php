@@ -18,15 +18,70 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            #map {
+	            height: 630px;
+	            width: 100%;
+            }
         </style>
+        
     </head>
     <body class="antialiased">
-        <div id="mapa">
-            <x-maps-leaflet :centerPoint="['lat' => 52.16, 'long' => 5]"></x-maps-leaflet> 
-
-            <x-maps-leaflet :zoomLevel="12"></x-maps-leaflet> 
-
-            <x-maps-leaflet :markers="[['lat' => 52.16444513293423, 'long' => 5.985622388024091]]"></x-maps-leaflet>
-        </div>
+        <script>
+            function iniciarMap(){
+                var coord = {lat: 5.067346479093432 ,lng: -75.51139162328708};
+                var coord2 = {lat: 5.055558 ,lng: -75.491033};
+                var coord3 = {lat: 5.074685 ,lng: -75.527674};
+                var coord4 = {lat: 5.065067 ,lng: -75.499467};
+                var coord5 = {lat: 5.064034 ,lng: -75.496672};
+                var coord6 = {lat: 5.048370 ,lng: -75.483051};
+                var coord7 = {lat: 5.056076 ,lng: -75.486315};
+                var coord8 = {lat: 5.069967 ,lng: -75.518437};
+                var coord9 = {lat: 5.067238 ,lng: -75.524370};
+                var map = new google.maps.Map(document.getElementById('map'),{
+                    zoom: 14.5,
+                    center: coord5
+            });
+            var marker = new google.maps.Marker({
+                    position: coord,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord2,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord3,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord4,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord5,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord6,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord7,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord8,
+                    map: map
+            });
+            var marker = new google.maps.Marker({
+                    position: coord9,
+                    map: map
+            });
+}
+        </script>
+        <div id="map">
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</div>
     </body>
 </html>
