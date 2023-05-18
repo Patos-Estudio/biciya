@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use App\Models\Product;
 use App\Models\User;
 
-class UsuariosController extends Controller
+
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,9 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
-        return view('acceso.acceso', compact('usuarios'));
+        $products = Product::all();
+        return view('acceso', compact('biciya'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -38,14 +38,12 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new User();
-        $usuario ->nombre = $request ->name;
-        $usuario ->apellido = $request ->ape;
-        $usuario ->cedula = $request ->cedula;
-        $usuario ->email = $request ->email;
-        $usuario ->contraseña = $request ->password;
-        $usuario ->save();
-        return redirect()->route('usuarios.index');
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->save();
+        return redirect()->route('products.index');
     }
 
     /**
@@ -67,9 +65,9 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('edit', compact('product'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -79,7 +77,12 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->save();
+        return redirect()->route('products.index');
     }
 
     /**
@@ -90,6 +93,9 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('products.index');
     }
+
 }

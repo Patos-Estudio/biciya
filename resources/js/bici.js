@@ -3,7 +3,7 @@ function home(){
 }
 
 function login_princi(){
-    window.location.href = ""
+    window.location.href = "../login/create.blade.php"
 }
 
 function login(){

@@ -27,15 +27,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  //   return view('login.login1');
 //});
 
+Route::resource('products', '\App\Http\Controllers\ProductsController');
+
 Route::get('login2', function () {
     return view('login.login2');
 });
 
 
 
-Route::get('acceso.blade.php', function () {
+Route::get('acceso', function () {
     return view('acceso.acceso');
 });
 
+Route::get('create', function () {
+    return view('login.create');
+});
 
-
+Route::resource('users', '\App\Http\Controllers\RegisterController');

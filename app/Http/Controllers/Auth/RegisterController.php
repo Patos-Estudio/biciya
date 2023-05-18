@@ -21,6 +21,11 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+    public function index()
+    {
+        $usuarios = User::all();
+        return view('acceso.acceso', compact('users'));
+    }
 
     use RegistersUsers;
 
