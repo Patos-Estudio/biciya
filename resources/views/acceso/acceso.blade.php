@@ -78,6 +78,39 @@
     </table>
 </div>
 <script src="..\login\bici.js"></script>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($products as $product)
+                <tr>
+                    <td>{{$product->id}}</td>
+                    <td>{{$product->nombre}}</td>
+                    <td>{{$product->apellido}}</td>
+                    <td>{{$product->cedula}}</td>
+                    <td>{{$product->email}}</td>
+                    <td>{{$product->contraseña}}</td>
+                    <td>
+                        <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary">Editar</a>
+                        <form action="{{route('products.destroy', $product->id)}}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+<script src="js/mostrarAlerta.js"></script>
 </body>
 </html>
 <!-- seria bueno saber como hacer que la pagina se acomode a la pantalla sola -->
