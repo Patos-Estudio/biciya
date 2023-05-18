@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Models\User;
 
 class UsuariosController extends Controller
 {
@@ -14,9 +15,10 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::all();
-        return view('login.create', compact('usuarios'));
+        $usuarios = User::all();
+        return view('acceso.acceso', compact('usuarios'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +38,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new Usuario();
+        $usuario = new User();
         $usuario ->nombre = $request ->name;
         $usuario ->apellido = $request ->ape;
         $usuario ->cedula = $request ->cedula;

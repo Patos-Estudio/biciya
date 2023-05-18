@@ -33,9 +33,12 @@ Route::get('login2', function () {
 
 
 
-Route::get('acceso.blade.php', function () {
+Route::get('acceso', function () {
     return view('acceso.acceso');
 });
 
+Route::get('create', function () {
+    return view('login.create');
+});
 
-
+Route::resource('users', '\App\Http\Controllers\RegisterController');
