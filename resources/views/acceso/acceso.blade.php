@@ -89,7 +89,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
+            {{-- @foreach ($products as $product)
                 <tr>
                     <td>{{$product->id}}</td>
                     <td>{{$product->nombre}}</td>
@@ -106,7 +106,7 @@
                         </form>
                     </td>
                 </tr>
-            @endforeach
+            @endforeach --}}
         </tbody>
     </table>
 </div>

@@ -33,7 +33,8 @@
             <ul>
                 <li><a href="#" class="nav-link">Inicio</a></li>
                 <li><a href="#" class="nav-link">Contacto</a></li>
-                <li><button onclick="login_princi()" type="button">Acceder</button></li>
+                <li><a href="{{route('login')}}">Acceder</a>
+                {{-- <li><button onclick="login_princi()" type="button">Acceder</button></li> --}}
             </ul>       
         </nav>
     </header>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('Inicio/index.blade.php', function () {
+Route::get('/inicio', function () {
     return view('inicio.index');
 });
 
@@ -27,20 +27,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  //   return view('login.login1');
 //});
 
-Route::resource('products', '\App\Http\Controllers\ProductsController');
 
-Route::get('login2', function () {
+Route::get('/login2', function () {
     return view('login.login2');
 });
+Route::resource('usuarios', '\App\Http\Controllers\UsuariosController');
 
 
-
-Route::get('acceso', function () {
-    return view('acceso.acceso');
-});
+// Route::get('acceso', function () {
+//     return view('acceso.acceso');
+// });
+Route::get('/acceso', [App\Http\Controllers\UsuariosController::class, 'index']);
 
 Route::get('create', function () {
     return view('login.create');
 });
 
-Route::resource('users', '\App\Http\Controllers\RegisterController');
+// Route::resource('users', '\App\Http\Controllers\RegisterController');

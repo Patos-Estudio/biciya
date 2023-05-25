@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
 use App\Models\User;
+// use App\Models\Product;
 
 class UsuariosController extends Controller
 {
@@ -16,6 +16,8 @@ class UsuariosController extends Controller
     public function index()
     {
         $usuarios = User::all();
+
+        
         return view('acceso.acceso', compact('usuarios'));
     }
 
@@ -90,6 +92,8 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::find($id);
+        $usuario->delete();
+        return redirect()->route('usuarios.index');
     }
 }
